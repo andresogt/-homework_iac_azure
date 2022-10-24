@@ -26,7 +26,7 @@ resource "azurerm_network_security_group" "sg-sod" {
     protocol                   = "Tcp"
     source_port_range          = "*"
     destination_port_range     = "22"
-    source_address_prefix      = "0.0.0.0/0"
+    source_address_prefix      = "181.135.45.209"
      destination_address_prefix = "*"
   }
 
@@ -91,8 +91,8 @@ resource "azurerm_network_interface" "nic-sod" {
 }
 
 
-resource "azurerm_linux_virtual_machine" "example" {
-  name                = "example-machine"
+resource "azurerm_linux_virtual_machine" "vm-sod" {
+  name                = "vm-sod"
   resource_group_name = azurerm_resource_group.app-grp-sod.name
   location            = azurerm_resource_group.app-grp-sod.location
   size                = "Standard_F2"
